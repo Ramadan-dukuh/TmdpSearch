@@ -1,38 +1,111 @@
+/* Global Styles */
+:root {
+  --primary-color: #ff9800; /* Amber */
+  --secondary-color: #212121; /* Dark Gray */
+  --accent-color: #f44336; /* Red */
+  --background-color: #121212; /* Almost Black */
+  --text-color: #e0e0e0; /* Light Gray */
+  --card-color: #1e1e1e; /* Dark Gray */
+  --border-color: #424242; /* Medium Gray */
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
+  background-color: var(--primary-color);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--card-color);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-link:hover {
+  color: var(--primary-color);
+}
+
+.movie-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+
+}
+
+.movie-wrapper {
+  width: 500px;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.movie-search {
+  width: 475px;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  padding: 10px 15px;
+  margin: 20px 0;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.movie-search:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.movie-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+}
+
+.movie-date {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.movie-rate {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--accent-color);
 }
